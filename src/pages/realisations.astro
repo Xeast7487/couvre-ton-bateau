@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const projects = [
+  { img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=75', alt: 'Toile rapide bleu marine sur Bayliner', cat: 'toile', title: 'Bayliner 24 pieds', desc: 'Toile rapide Sunbrella bleu marine avec passepoil blanc' },
+  { img: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=700&q=75', alt: 'Toit campeur F-150', cat: 'campeur', title: 'Ford F-150 2021', desc: 'Toit campeur rigide avec deux fenêtres latérales' },
+  { img: 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=700&q=75', alt: 'Rembourrage cockpit', cat: 'rembourrage', title: 'Rembourrage Sea Ray 220', desc: 'Coussins cockpit + banquette arrière en vinyle gris perle' },
+  { img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=700&q=75', alt: 'Bimini blanc', cat: 'toile', title: 'Bimini Wellcraft 23\'', desc: 'Bimini 3 arcs en aluminium, tissu Sunbrella blanc' },
+  { img: 'https://images.unsplash.com/photo-1516728778615-2d590ea1855e?w=700&q=75', alt: 'Plancher vinyle teck', cat: 'plancher', title: 'Plancher vinyle Chaparral', desc: 'Revêtement vinyle motif teck, cockpit complet' },
+  { img: 'https://images.unsplash.com/photo-1567674049619-df4dc76abb6b?w=700&q=75', alt: 'Toile hivernage', cat: 'toile', title: 'Toile d\'hivernage Boston Whaler', desc: 'Toile Stamoid avec structure support pour la neige' },
+  { img: 'https://images.unsplash.com/photo-1591382386627-349b692688ff?w=700&q=75', alt: 'Toit campeur Ram', cat: 'campeur', title: 'RAM 2500 Power Wagon', desc: 'Toit semi-rigide avec aménagement lit intégré' },
+  { img: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=700&q=75', alt: 'Console de bateau recouverte', cat: 'rembourrage', title: 'Garniture console MasterCraft', desc: 'Refection complète console, vinyle gris foncé' },
+  { img: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=700&q=75', alt: 'Bateau avec toile', cat: 'toile', title: 'Toile Grew 196', desc: 'Toile rapide avec fermeture éclair pour accès facile' },
+]
+
+const cats = [
+  { key: 'tous', label: 'Tout voir' },
+  { key: 'toile', label: 'Toiles' },
+  { key: 'campeur', label: 'Toits campeur' },
+  { key: 'rembourrage', label: 'Rembourrage' },
+  { key: 'plancher', label: 'Plancher' },
+]
+---
+<Layout title="Nos réalisations" description="Galerie de nos réalisations : toiles de bateaux, toits campeur et rembourrages fabriqués sur mesure en Estrie.">
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,.6)">Notre travail</span>
+    <h1>Nos réalisations</h1>
+    <p>Quelques-uns des projets qu'on a livrés ces dernières années.</p>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="container">
+    <div class="filter-bar" id="filterBar">
+      {cats.map(c => (
+        <button class={`filter-btn ${c.key === 'tous' ? 'active' : ''}`} data-cat={c.key}>
+          {c.label}
+        </button>
+      ))}
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      {projects.map(p => (
+        <div class="gallery-item" data-cat={p.cat}>
+          <div class="gallery-img">
+            <img src={p.img} alt={p.alt} loading="lazy" />
+          </div>
+          <div class="gallery-info">
+            <strong>{p.title}</strong>
+            <p>{p.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="gallery-cta">
+  <div class="container gallery-cta-inner">
+    <div class="gallery-cta-text">
+      <h2>Votre bateau pourrait être ici</h2>
+      <p>On prend de nouveaux projets — contactez-nous pour discuter de votre besoin.</p>
+    </div>
+    <a href="/contact" class="btn btn-primary">Demander une soumission</a>
+  </div>
+</section>
+
+</Layout>
+
+<script>
+const buttons = document.querySelectorAll('.filter-btn')
+const items = document.querySelectorAll('.gallery-item')
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'))
+    btn.classList.add('active')
+    const cat = btn.dataset.cat
+    items.forEach(item => {
+      const matches = cat === 'tous' || item.dataset.cat === cat
+      item.style.display = matches ? '' : 'none'
+      if (matches) item.style.animation = 'fadeIn .3s ease'
+    })
+  })
+})
+</script>
+
+<style>
+.gallery-section { padding: 4rem 0 5rem; }
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.filter-btn {
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--sand);
+  border-radius: 999px;
+  background: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all .15s;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.gallery-item {
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s, transform .2s;
+}
+.gallery-item:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.gallery-img { aspect-ratio: 4/3; overflow: hidden; }
+.gallery-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.gallery-item:hover .gallery-img img { transform: scale(1.05); }
+.gallery-info { padding: 1rem 1.25rem; }
+.gallery-info strong { display: block; font-family: var(--font-sans); font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+.gallery-info p { font-size: 0.83rem; color: var(--muted); line-height: 1.5; margin: 0; }
+
+.gallery-cta {
+  background: var(--cream);
+  padding: 4rem 0;
+  border-top: 1px solid var(--sand);
+}
+.gallery-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.gallery-cta-text h2 { font-size: 1.9rem; margin-bottom: 0.5rem; }
+.gallery-cta-text p { color: var(--mid); }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 900px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-cta-inner { flex-direction: column; text-align: center; }
+}
+</style>

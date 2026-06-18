@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const services = [
+  {
+    id: 'bateaux',
+    icon: '⛵',
+    title: 'Toiles de bateaux',
+    subtitle: 'Sur mesure pour votre embarcation',
+    description: `Chaque bateau est différent, alors chaque toile est faite différemment. On prend les mesures directement sur votre embarcation pour s'assurer que la toile tombe à plat, qu'elle ne batte pas dans le vent et qu'elle soit facile à installer et enlever.`,
+    details: [
+      { name: 'Toiles rapides (snap covers)', desc: 'La protection classique. Snappe directement sur le rail de votre bateau. Tissu vinyle ou Sunbrella selon votre choix.' },
+      { name: 'Biminis', desc: 'Protection solaire pour le cockpit. Structure tubulaire en aluminium ou inox avec tissu Sunbrella. Fabrication et installation incluses.' },
+      { name: 'Toiles d\'hivernage', desc: 'Pour passer l\'hiver dehors sans craindre la neige et le gel. Tissu robuste avec renforts aux points de tension.' },
+      { name: 'Housses de console', desc: 'Protégez votre console de pilotage, vos instruments et votre siège capitaine entre les sorties.' },
+    ],
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=75',
+    imgAlt: 'Toile de bateau sur mesure'
+  },
+  {
+    id: 'campeur',
+    icon: '🏕️',
+    title: 'Toits campeur',
+    subtitle: 'Pour pickup et camionnette',
+    description: `On fabrique des toits campeur sur mesure pour les propriétaires de pickup qui veulent un espace de couchage sans traîner une roulotte. C'est une solution populaire en Estrie pour les chasseurs, pêcheurs et amateurs de plein air.`,
+    details: [
+      { name: 'Toit rigide fibré', desc: 'Construction en fibre de verre avec isolation thermique. Fenêtres ouvrant sur les côtés. Finition peinte ou vernie.' },
+      { name: 'Toit semi-rigide', desc: 'Structure aluminum avec panneaux rigides et bâche. Plus léger, idéal si vous l\'enlevez souvent.' },
+      { name: 'Aménagement intérieur', desc: 'Montage de lit, rangements, éclairage 12V. On peut adapter l\'intérieur selon votre utilisation.' },
+      { name: 'Modèles compatibles', desc: 'Ford F-150, F-250, RAM 1500 et 2500, GMC Sierra, Chevrolet Silverado, Toyota Tundra. Contactez-nous pour votre modèle.' },
+    ],
+    img: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=75',
+    imgAlt: 'Toit campeur sur pickup'
+  },
+  {
+    id: 'interieur',
+    icon: '🧵',
+    title: 'Rembourrage & intérieur',
+    subtitle: 'Coussins, banquettes et cockpit',
+    description: `L'intérieur d'un bateau ça use vite — UV, eau salée, humidité. On redonne vie à vos coussins, banquettes et garnitures avec des matériaux marins résistants. On fait aussi les planchers vinyle qui ont l'air du bois sans en avoir les inconvénients.`,
+    details: [
+      { name: 'Coussins de cockpit', desc: 'Mousse marine haute densité recouverte de vinyle ou tissu. Imperméable, résistant aux UV, facile à nettoyer.' },
+      { name: 'Banquettes arrière', desc: 'Fabrication sur mesure pour remplacer les banquettes d\'origine abîmées. Même couleur ou changement complet de style.' },
+      { name: 'Revêtement de plancher vinyle', desc: 'Motif bois ou uni, antidérapant. Ça change complètement l\'apparence d\'un bateau et c\'est pratique à entretenir.' },
+      { name: 'Garnitures et panneaux', desc: 'Côtés de console, capots de moteur, dossiers. On couvre tout ce qui commence à avoir l\'air fatigué.' },
+    ],
+    img: 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800&q=75',
+    imgAlt: 'Rembourrage intérieur de bateau'
+  },
+]
+---
+<Layout title="Nos services" description="Toiles de bateaux, toits campeur et rembourrage marine sur mesure en Estrie. Tissu Sunbrella, vinyle marin, fabrication locale.">
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,.6)">Ce qu'on fait</span>
+    <h1>Nos services</h1>
+    <p>Du travail artisanal avec les bons matériaux, adapté à ce dont vous avez besoin.</p>
+  </div>
+</section>
+
+{services.map((svc, i) => (
+  <section class={`service-section ${i % 2 === 1 ? 'service-section--alt' : ''}`} id={svc.id}>
+    <div class="container service-inner">
+      <div class="service-img">
+        <img src={svc.img} alt={svc.imgAlt} loading="lazy" />
+      </div>
+      <div class="service-content">
+        <span class="service-icon">{svc.icon}</span>
+        <span class="section-label">{svc.subtitle}</span>
+        <h2>{svc.title}</h2>
+        <p class="service-desc">{svc.description}</p>
+        <ul class="service-details">
+          {svc.details.map(d => (
+            <li>
+              <strong>{d.name}</strong>
+              <p>{d.desc}</p>
+            </li>
+          ))}
+        </ul>
+        <a href="/contact" class="btn btn-primary">Demander une soumission</a>
+      </div>
+    </div>
+  </section>
+))}
+
+<section class="materials">
+  <div class="container">
+    <span class="section-label">Nos matériaux</span>
+    <h2>On utilise ce qui dure</h2>
+    <p>Pas de tissu générique. On travaille avec les marques qu'on connaît et en lesquelles on a confiance.</p>
+    <div class="mat-grid">
+      <div class="mat-card">
+        <h4>Sunbrella®</h4>
+        <p>Le standard de l'industrie pour les toiles marines. Résistant aux UV, respirant, disponible en 60+ couleurs.</p>
+      </div>
+      <div class="mat-card">
+        <h4>Stamoid®</h4>
+        <p>Vinyle 100% étanche pour les toiles d'hivernage et les applications qui demandent une imperméabilité totale.</p>
+      </div>
+      <div class="mat-card">
+        <h4>Vinyle marin 28 oz</h4>
+        <p>Pour le rembourrage et les garnitures. Ultra-résistant à l'eau, aux moisissures et à l'abrasion.</p>
+      </div>
+      <div class="mat-card">
+        <h4>Mousse haute densité</h4>
+        <p>Mousse marine à cellules fermées. Ne retient pas l'eau, garde sa forme et son confort pendant des années.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>Vous ne savez pas par où commencer?</h2>
+      <p>Appelez-nous ou envoyez un message — on vous guide sans pression.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/contact" class="btn btn-primary">Soumission gratuite</a>
+      <a href="tel:+18199000000" class="btn btn-outline-light">819 900-0000</a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.service-section { padding: 5rem 0; }
+.service-section--alt { background: var(--cream); }
+.service-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+.service-section--alt .service-inner { direction: rtl; }
+.service-section--alt .service-inner > * { direction: ltr; }
+
+.service-img img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+}
+.service-icon { font-size: 2.25rem; display: block; margin-bottom: 0.5rem; }
+.service-content h2 { font-size: 2rem; margin: 0.25rem 0 1rem; }
+.service-desc { color: var(--mid); line-height: 1.7; margin-bottom: 1.75rem; }
+
+.service-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid var(--sand);
+}
+.service-section--alt .service-details { background: var(--cream); }
+.service-details li strong {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.15rem;
+}
+.service-details li p { font-size: 0.88rem; color: var(--mid); margin: 0; line-height: 1.55; }
+
+.materials {
+  padding: 5rem 0;
+}
+.materials h2 { font-size: 2rem; margin: 0.25rem 0 0.75rem; }
+.materials > .container > p { color: var(--mid); margin-bottom: 2.5rem; }
+.mat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.mat-card {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+.mat-card h4 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+.mat-card p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; }
+
+.cta-band {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+  padding: 4rem 0;
+  color: #fff;
+}
+.cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cta-inner h2 { color: #fff; font-size: 2rem; margin-bottom: 0.5rem; }
+.cta-inner p { color: rgba(255,255,255,.75); }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .service-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .service-section--alt .service-inner { direction: ltr; }
+  .mat-grid { grid-template-columns: 1fr 1fr; }
+  .cta-inner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 600px) {
+  .mat-grid { grid-template-columns: 1fr; }
+}
+</style>

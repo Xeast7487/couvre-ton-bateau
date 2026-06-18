@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+<Layout title="Contact" description="Demandez une soumission gratuite pour vos toiles de bateaux, toit campeur ou rembourrage. On vous répond rapidement en Estrie.">
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,.6)">Parlons-nous</span>
+    <h1>Demandez une soumission</h1>
+    <p>Gratuite, sans engagement. On répond en général dans la même journée en saison.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container contact-inner">
+
+    <!-- FORM -->
+    <div class="contact-form-wrap">
+      <h2>Envoyez-nous un message</h2>
+      <p class="form-note">Plus vous nous donnez de détails (type de bateau, longueur, service souhaité), plus on peut vous donner une idée de prix rapidement.</p>
+      <form class="contact-form" id="contactForm" action="#" method="POST">
+        <div class="form-row">
+          <div class="field">
+            <label for="nom">Nom complet *</label>
+            <input type="text" id="nom" name="nom" placeholder="Marie Tremblay" required />
+          </div>
+          <div class="field">
+            <label for="tel">Téléphone *</label>
+            <input type="tel" id="tel" name="tel" placeholder="819 555-0000" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Courriel *</label>
+          <input type="email" id="email" name="email" placeholder="marie@example.com" required />
+        </div>
+        <div class="field">
+          <label for="service">Type de service</label>
+          <select id="service" name="service">
+            <option value="">-- Choisissez un service --</option>
+            <option value="toile">Toile de bateau (rapide, bimini)</option>
+            <option value="hivernage">Toile d'hivernage</option>
+            <option value="campeur">Toit campeur</option>
+            <option value="rembourrage">Rembourrage (coussins, banquette)</option>
+            <option value="plancher">Revêtement de plancher</option>
+            <option value="autre">Autre / Je ne suis pas sûr</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="bateau">Type et longueur d'embarcation</label>
+            <input type="text" id="bateau" name="bateau" placeholder="Ex: Bayliner 24 pieds, deckboat" />
+          </div>
+          <div class="field">
+            <label for="delai">Délai souhaité</label>
+            <select id="delai" name="delai">
+              <option value="">-- Pas de préférence --</option>
+              <option value="urgent">Dès que possible</option>
+              <option value="mois">D'ici un mois</option>
+              <option value="printemps">Pour le printemps</option>
+              <option value="hiver">Pas pressé (livraison hiver)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet, les couleurs souhaitées, des photos si vous en avez..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">
+          Envoyer ma demande
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+        <p class="form-legal">On ne partage pas vos informations avec qui que ce soit.</p>
+      </form>
+      <div class="form-success" id="formSuccess" style="display:none">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+        <h3>Message envoyé !</h3>
+        <p>Merci pour votre demande. On vous contacte d'habitude dans la même journée en saison.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div class="contact-info">
+      <div class="info-card">
+        <h3>Nous joindre directement</h3>
+        <a href="tel:+18199000000" class="info-phone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 13.5 19.79 19.79 0 0 1 1.08 4.72 2 2 0 0 1 3.06 2.54h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 10.45a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 17l-.36-.08z"/></svg>
+          819 900-0000
+        </a>
+        <a href="mailto:info@couvretonbateau.ca" class="info-email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@couvretonbateau.ca
+        </a>
+        <div class="info-hours">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <strong>Heures d'ouverture</strong>
+            <p>Lundi — Vendredi : 8h à 17h</p>
+            <p>Samedi : 9h à 12h (saison)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>Zone de service</h3>
+        <p>On dessert principalement la région de l'Estrie, incluant :</p>
+        <ul class="zone-list">
+          <li>Sherbrooke</li>
+          <li>Magog & lac Memphrémagog</li>
+          <li>Coaticook</li>
+          <li>Lac-Mégantic</li>
+          <li>Windsor, Danville, Richmond</li>
+          <li>Orford, Eastman, Sutton</li>
+        </ul>
+        <p class="zone-note">Pour les projets hors zone, contactez-nous — on peut souvent s'arranger.</p>
+      </div>
+
+      <div class="info-card info-card--tip">
+        <h3>Pour une soumission plus rapide</h3>
+        <ul class="tip-list">
+          <li>📏 Longueur de votre embarcation</li>
+          <li>🚤 Marque et modèle</li>
+          <li>📸 Quelques photos (courriel ou texto)</li>
+          <li>🎨 Couleur ou tissu préféré</li>
+        </ul>
+        <p>Plus on a d'info, moins il y a d'allers-retours avant de commencer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<script>
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+  e.preventDefault()
+  this.style.display = 'none'
+  const success = document.getElementById('formSuccess')
+  if (success) success.style.display = 'flex'
+})
+</script>
+
+<style>
+.contact-section { padding: 4.5rem 0 5rem; }
+.contact-inner {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* FORM */
+.contact-form-wrap h2 { font-size: 1.75rem; margin-bottom: 0.6rem; }
+.form-note { color: var(--mid); font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.6; }
+
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field { display: flex; flex-direction: column; gap: 0.3rem; }
+.field label { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+
+.field input, .field select, .field textarea {
+  border: 1.5px solid var(--sand);
+  border-radius: 4px;
+  padding: 0.65rem 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.93rem;
+  color: var(--dark);
+  background: #fff;
+  transition: border-color .15s;
+  outline: none;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--navy); }
+.field textarea { resize: vertical; min-height: 120px; }
+
+.form-submit { width: 100%; justify-content: center; margin-top: 0.5rem; padding: 0.9rem; font-size: 1rem; }
+.form-legal { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 0.25rem; }
+
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--cream);
+  border-radius: 6px;
+  border: 1px solid var(--sand);
+  gap: 0.75rem;
+}
+.form-success svg { color: #22c55e; }
+.form-success h3 { font-size: 1.5rem; }
+.form-success p { color: var(--mid); }
+
+/* INFO CARDS */
+.contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+.info-card {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  padding: 1.5rem 1.75rem;
+}
+.info-card h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+.info-phone, .info-email {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+  text-decoration: none;
+  transition: color .15s;
+}
+.info-phone { font-size: 1.25rem; font-weight: 700; }
+.info-phone:hover, .info-email:hover { color: var(--rust); }
+.info-hours {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sand);
+  color: var(--mid);
+}
+.info-hours svg { flex-shrink: 0; margin-top: 0.15rem; color: var(--navy); }
+.info-hours strong { display: block; font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+.info-hours p { font-size: 0.88rem; margin: 0; }
+
+.zone-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; margin: 0.75rem 0; }
+.zone-list li { font-size: 0.88rem; color: var(--mid); padding-left: 1rem; position: relative; }
+.zone-list li::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-size: 0.8rem; }
+.zone-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 0.75rem; }
+
+.info-card--tip { border-left: 3px solid var(--rust); }
+.tip-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin: 0.75rem 0; }
+.tip-list li { font-size: 0.9rem; color: var(--mid); }
+.info-card--tip > p { font-size: 0.85rem; color: var(--muted); font-style: italic; margin-top: 0.5rem; }
+
+@media (max-width: 960px) {
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 560px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>

@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+<Layout title="À propos" description="Couvre ton Bateau, artisans en toiles marines depuis 1998 en Estrie. Découvrez notre histoire et notre façon de travailler.">
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,.6)">Notre histoire</span>
+    <h1>À propos</h1>
+    <p>Une entreprise de région, fondée sur le respect du métier.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="container story-inner">
+    <div class="story-text">
+      <span class="section-label">Depuis 1998</span>
+      <h2>On est partis d'un atelier, pas d'un PowerPoint</h2>
+      <p>Couvre ton Bateau a commencé simplement : un atelier en Estrie, une machine à coudre industrielle, et des propriétaires de bateaux qui voulaient du travail bien fait à un prix honnête.</p>
+      <p>Vingt-cinq ans plus tard, on fabrique encore chaque toile à la main, dans le même esprit. La région a changé, nos machines aussi, mais notre façon de travailler est restée la même.</p>
+      <p>On est pas les moins chers en ville et on ne cherche pas à l'être. On préfère livrer quelque chose dont on est fiers, qui va durer dix ans, plutôt qu'une toile bas de gamme qui lâche au deuxième printemps.</p>
+    </div>
+    <div class="story-img">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&q=75" alt="Atelier de fabrication de toiles" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="container">
+    <span class="section-label">Ce en quoi on croit</span>
+    <h2>Notre façon de faire les choses</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <h3>Les bonnes mesures</h3>
+        <p>On ne fait jamais de toile sans avoir pris les mesures sur votre embarcation. Un gabarit de l'année passée, ça peut être bon — ou ça peut gâcher tout le travail. On prend le temps de le faire comme il faut.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3>Les bons matériaux</h3>
+        <p>Sunbrella, Stamoid, vinyle marin — on choisit le tissu en fonction de l'utilisation, pas en fonction du prix. Ça fait partie de notre soumission et on vous explique pourquoi on choisit ce qu'on choisit.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3>Les vraies échéances</h3>
+        <p>En haute saison, la liste d'attente peut être longue. On vous dit la vraie date, pas celle que vous voulez entendre. Si ça ne fait pas votre affaire, on comprend. Mais si on dit le 15 mai, c'est le 15 mai.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <h3>Le service après</h3>
+        <p>Si votre toile a un problème dans l'année qui suit, on s'en occupe. Point final. On ne vous fait pas courir pour une garantie — si c'est de notre faute, on le règle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="service-area">
+  <div class="container area-inner">
+    <div class="area-text">
+      <span class="section-label">Où on travaille</span>
+      <h2>On se déplace en Estrie</h2>
+      <p>Pour les prises de mesures et les installations, on se déplace. Notre zone de service couvre tout l'Estrie, mais on peut aussi se rendre plus loin pour les gros projets — appelez-nous pour en discuter.</p>
+      <ul class="area-list">
+        <li><span>📍</span> Sherbrooke et région</li>
+        <li><span>📍</span> Magog — Lac Memphrémagog</li>
+        <li><span>📍</span> Coaticook et les Cantons-de-l'Est</li>
+        <li><span>📍</span> Lac-Mégantic</li>
+        <li><span>📍</span> Windsor, Richmond, Danville</li>
+        <li><span>📍</span> Et alentours — demandez-nous</li>
+      </ul>
+    </div>
+    <div class="area-card">
+      <h3>Besoin d'un service hors de la zone?</h3>
+      <p>Pour les gros travaux (bateaux de 30 pieds et plus, commandes multiples), on peut discuter d'un déplacement. Contactez-nous pour voir ce qu'on peut arranger.</p>
+      <a href="/contact" class="btn btn-primary" style="margin-top:1.25rem">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat">
+      <strong>1998</strong>
+      <span>Fondé en Estrie</span>
+    </div>
+    <div class="stat">
+      <strong>25+</strong>
+      <span>Années d'expérience</span>
+    </div>
+    <div class="stat">
+      <strong>500+</strong>
+      <span>Bateaux habillés</span>
+    </div>
+    <div class="stat">
+      <strong>100%</strong>
+      <span>Fabrication locale</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>Vous avez un projet en tête?</h2>
+      <p>Prenez contact — on répond vite et sans pression.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/contact" class="btn btn-primary">Soumission gratuite</a>
+      <a href="tel:+18199000000" class="btn btn-outline-light">819 900-0000</a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.story { padding: 5.5rem 0; }
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.story-text .section-label { margin-bottom: 0.75rem; }
+.story-text h2 { font-size: 2rem; margin-bottom: 1.25rem; }
+.story-text p { color: var(--mid); line-height: 1.75; margin-bottom: 1rem; }
+.story-text p:last-child { margin-bottom: 0; }
+.story-img img {
+  width: 100%; border-radius: 6px; box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/3; object-fit: cover;
+}
+
+.values { padding: 5rem 0; background: var(--cream); }
+.values h2 { font-size: 2rem; margin: 0.25rem 0 2.5rem; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.value-card {
+  background: #fff;
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  padding: 2rem;
+}
+.value-num {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--sand);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.value-card h3 { font-size: 1.15rem; margin-bottom: 0.65rem; }
+.value-card p { color: var(--mid); font-size: 0.93rem; line-height: 1.7; }
+
+.service-area { padding: 5rem 0; }
+.area-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.area-text h2 { font-size: 2rem; margin: 0.25rem 0 1rem; }
+.area-text > p { color: var(--mid); line-height: 1.7; margin-bottom: 1.5rem; }
+.area-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.area-list li { display: flex; gap: 0.6rem; align-items: center; font-size: 0.95rem; color: var(--mid); }
+.area-list li span { flex-shrink: 0; }
+.area-card {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  padding: 2rem;
+}
+.area-card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+.area-card p { color: var(--mid); font-size: 0.93rem; line-height: 1.65; }
+
+.stats { background: var(--navy); padding: 4rem 0; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+.stat { color: rgba(255,255,255,.85); }
+.stat strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.stat span { font-size: 0.88rem; letter-spacing: 0.04em; }
+
+.cta-band {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+  padding: 4rem 0; color: #fff;
+}
+.cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.cta-inner h2 { color: #fff; font-size: 2rem; margin-bottom: 0.5rem; }
+.cta-inner p { color: rgba(255,255,255,.75); }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .story-inner, .area-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .values-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .cta-inner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 500px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat strong { font-size: 2.2rem; }
+}
+</style>
